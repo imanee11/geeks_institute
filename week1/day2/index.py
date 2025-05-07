@@ -70,11 +70,83 @@
 # set1.remove(4) # remove 4 from set1
 # print(set1)
 
-a = {1, 2, 3, 4, 5}
-b = {2, 3, 6, 7, 5}
-c = a^b 
-print(c)
-d = a - b
-print(d)
-e = b - a 
-print(e)
+# a = {1, 2, 3, 4, 5}
+# b = {2, 3, 6, 7, 5}
+# c = a^b 
+# print(c)
+# d = a - b
+# print(d)
+# e = b - a 
+# print(e)
+
+# d = {1:'10', 2:'20', 3:'30', 4:'40', 5:'50'}
+
+# print(d.items())
+
+# The items() method returns a view object that displays 
+# a list of dictionary's (key, value) tuple pairs.
+
+
+# for key, value in d.items():
+#     print(key, '->', value)
+
+
+# sample_dict = { 
+#    "class":{ 
+#       "student":{ 
+#          "name":"Mike",
+#          "marks":{ 
+#             "physics":70,
+#             "history":80
+#          }
+#       }
+#    }
+# }
+
+# print(sample_dict['class']['student'] ['marks'] ['history'])
+
+
+# rick_dict = {
+#     'first_name':'Rick',
+#     'last_name':'Sanchez'
+# }
+
+# rick_dict['age'] = 21
+# print(rick_dict)
+
+# del rick_dict['last_name']
+# print(rick_dict)
+
+# rick_dict['first_name'] = 'imane'
+# print(rick_dict)
+
+
+# sample_dict = {
+#   "name": "Kelly",
+#   "age":25,
+#   "salary": 8000,
+#   "city": "New york"
+# }
+
+# keys_to_remove = ["name", "salary"]
+
+# for key in keys_to_remove:
+#     sample_dict.pop(key)
+# print(sample_dict)
+
+
+#! For Loops and dictionaries
+
+my_books = {
+  "title": "Harry Potter",
+  "author": "JK Rowling",
+}
+ 
+#* x for the key / y for the value
+# for x, y in my_books.items():
+#     print("the" + ' ' + x + ' ' + "is" + ' ' + y)
+
+for item in enumerate('abcd'):
+    print(item)
+
+ 
