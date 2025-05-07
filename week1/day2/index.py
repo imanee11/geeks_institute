@@ -146,7 +146,34 @@ my_books = {
 # for x, y in my_books.items():
 #     print("the" + ' ' + x + ' ' + "is" + ' ' + y)
 
-for item in enumerate('abcd'):
-    print(item)
+# for item in enumerate('abcd'):
+#     print(item)
 
- 
+
+#! challenge
+dictionary = {}
+
+# while True :
+#     key = input('enter a key : ')
+#     if key == 'quit':
+#       break
+#     value = input(f"Enter a value for '{key}': ")
+#     dictionary[key] = value
+
+# print (dictionary)
+
+#! challenge
+def calculation(a , b):
+    add = a + b
+    sub = a - b
+    return add, sub
+
+add, sub = calculation(7, 5)
+print(add , sub)
+
+# result = calculation(10, 5)
+
+# print("Addition:", result[0])
+# print("Subtraction:", result[1])
+    
+
