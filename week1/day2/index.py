@@ -163,17 +163,74 @@ dictionary = {}
 # print (dictionary)
 
 #! challenge
-def calculation(a , b):
-    add = a + b
-    sub = a - b
-    return add, sub
+# def calculation(a , b):
+#     add = a + b
+#     sub = a - b
+#     return add, sub
 
-add, sub = calculation(7, 5)
-print(add , sub)
+# add, sub = calculation(7, 5)
+# print(add , sub)
 
 # result = calculation(10, 5)
 
 # print("Addition:", result[0])
 # print("Subtraction:", result[1])
+
+#! map
+# def upper_string(s):
+#     return s.upper()
+
+# fruit = ["Apple", "Banana", "Pear", "Apricot", "Orange"]
+# map_object = map(upper_string, fruit)
+
+# print(list(map_object))
+
+#! filter
+# def starts_with_A(s):
+#     return s[0] == "B"
+
+# fruit = ["Apple", "Banana", "Pear", "Apricot", "Orange"]
+# filtered_object = filter(starts_with_A, fruit)
+
+# print(list(filtered_object))
     
+#! reduce
+# from functools import reduce
+
+# def sum_numbers(first, second):
+#     return first+second
+
+# my_list = [1, 3, 5, 7]
+# reduced_list = reduce(sum_numbers, my_list)
+
+# print(reduced_list)
+
+#! lambda
+# fruit = ["Apple", "Banana", "Pear", "Apricot", "Orange"]
+# map_object = map(lambda s: s.upper(), fruit)
+
+# print(list(map_object))
+
+
+people = ["Rick", "Morty", "Beth", "Jerry", "Snowball"]
+
+#& Using map and filter, try to say hello to everyone who's name 
+#& is less than or equal to 4 letters
+
+def short(name):
+  return len(name) <= 4 # return the names that less then 4 or =
+
+   
+def say_hello(name):
+  return f'hello {name}' # return hello
+    
+short_names = filter(short, people) # filter the short ppl using the function
+
+greetings = map(say_hello, short_names) # map and say hello for every filtred one
+
+for i in greetings:
+    print(i)
+    
+    
+
 
