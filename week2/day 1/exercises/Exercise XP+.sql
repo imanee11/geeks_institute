@@ -62,4 +62,16 @@ select first_name, last_name from students where student_id IN (1, 3)
 select * from students where birth_date >= '01/01/2000'
 
 
+-- Exrecises XP Gold
+-- Fetch the first four students. You have to order the four students alphabetically by last_name.
+select first_name, last_name , birth_date from students ORDER BY last_name ASC LIMIT 4
+
+-- Fetch the details of the youngest student.
+select first_name, last_name , birth_date from students ORDER BY birth_date DESC LIMIT 1
+
+-- Fetch three students skipping the first two students.
+select first_name, last_name , birth_date from students LIMIT 3 OFFSET 2
+
+
+
 
