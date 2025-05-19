@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1 : Checking the BMI</title>
+</head>
+<body>
+    <h1>Exercise 1 : Checking the BMI</h1>
+    <script>
+
+        //Create two objects, each object should hold a person’s details. Here are the details:
+        // FullName Mass Height
+        
+        let person1 = {
+            fullName: "Loid Forger",
+            mass: 75, 
+            height: 187,
+            calcBMI: function () {
+                let heightInMeters = person1.height / 100
+                return person1.mass / (heightInMeters * heightInMeters);
+            }
+        };
+
+        let person2 = {
+            fullName: "Anya Forger",
+            mass: 25, 
+            height: 99.5,
+            calcBMI: function () {
+                let heightInMeters = person2.height / 100
+                return person2.mass / (heightInMeters * heightInMeters);
+            }
+        };
+
+        // console.log(person1.calcBMI().toFixed(2));
+        // console.log(person2.calcBMI().toFixed(2));
+
+        // Outside of the objects, create a JS function that compares the BMI of both objects.
+        // Display the name of the person who has the largest BMI.
+
+        function compareBMI(p1 , p2) {
+            let bmi1 = p1.calcBMI();
+            let bmi2 = p2.calcBMI();
+
+            if(bmi1 > bmi2){
+                console.log(`${p1.fullName} has the largest BMI`);
+            }else if(bmi1 < bmi2) {
+                console.log(`${p2.fullName} has the largest BMI`);
+            }else{
+                console.log(`${p2.fullName} and ${p1.fullName} have the same BMI`);
+            }
+        }
+
+        compareBMI(person1 , person2)
+
+    </script>
+    
+</body>
+</html>

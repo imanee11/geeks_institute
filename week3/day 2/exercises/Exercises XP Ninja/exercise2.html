@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 : Grade Average</title>
+</head>
+<body>
+    <h1>Exercise 2 : Grade Average</h1>
+    <script>
+
+        // Create a function called findAvg(gradesList) that takes an argument called gradesList.
+        // Your function must calculate and console.log the average.
+        // If the average is above 65 let the user know they passed
+        // If the average is below 65 let the user know they failed and must repeat the course
+        function checkPass(avg) {
+            if (avg >= 65) {
+                console.log("uu passed!!");
+            }else{
+                console.log("uu failed :( , u must repeat the course.");
+            }
+        }
+
+        function findAvg(gradesList) {
+            let total = 0
+            for (let grade of gradesList){
+                total += grade
+            }
+            let average = total / gradesList.length;
+            console.log("average : " , average.toFixed(2)); 
+            checkPass(average)
+        }
+
+        findAvg([20, 90, 60]);
+        findAvg([90, 90, 60]);
+
+    </script>
+    
+</body>
+</html>
