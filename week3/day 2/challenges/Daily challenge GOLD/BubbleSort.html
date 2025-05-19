@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily challenge GOLD: Bubble Sort</title>
+</head>
+<body>
+    <h1>Daily challenge GOLD: Bubble Sort</h1>
+    <script>
+        const numbers = [5,0,9,1,7,4,2,6,3,8];
+
+        // Using the .toString() method convert the array to a string.
+        let toString = numbers.toString()
+        console.log(toString);
+
+        // Using the .join()method convert the array to a string. Try passing different values into the join.
+        // Eg .join(“+”), .join(” “), .join(“”)
+        console.log(numbers.join("+")); 
+        console.log(numbers.join(" "));
+        console.log(numbers.join(""));
+
+        // Sort the numbers array in descending order, do so using for loops (Not using built-in sort methods).
+        // The output should be: [9,8,7,6,5,4,3,2,1,0]
+        for (let i = 0; i < numbers.length; i++) {
+            for (let j = i + 1; j < numbers.length; j++) {
+
+                if (numbers[j] > numbers[i]) {
+                    let temp = numbers[i]; 
+                    numbers[i] = numbers[j];   
+                    numbers[j] = temp;       
+                }
+            }
+        }
+        console.log(numbers);
+        
+    </script>
+    
+</body>
+</html>
