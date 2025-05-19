@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 3 : Playing with numbers</title>
+</head>
+<body>
+    <h1>🌟 Exercise 3 : Playing with numbers</h1>
+    <script>
+        let age = [20,5,12,43,98,55];
+
+        // 1. Console.log the sum of all the numbers in the age array.
+        let sum = 0
+        for (let i = 0; i < age.length; i++) {
+            sum += age[i]
+        }
+        console.log("the sum is:", sum)
+
+    
+        // 2. Console.log the highest age in the array.
+        let highest = age[0]
+
+        for (let i = 1; i < age.length; i++) {
+            if (age[i] > highest) {
+                highest = age[i];
+            }
+        }
+        console.log("the highest age is:", highest )
+
+    </script>
+    
+</body>
+</html>
