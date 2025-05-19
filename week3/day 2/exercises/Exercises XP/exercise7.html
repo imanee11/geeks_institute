@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 7 : Secret Group</title>
+</head>
+<body>
+    <h1>🌟 Exercise 7 : Secret Group</h1>
+    <script>
+
+        const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+        // A group of friends have decided to start a secret society. The society’s name will be the first letter of each of their names sorted in alphabetical order.
+        // Hint: a string is an array of letters
+        
+        let word = [];
+
+        for (let i = 0; i < names.length; i++) {
+            first = names[i].charAt(0)
+            word.push(first)           
+        }
+        
+        word.sort();
+
+        let secretName = word.join("");
+
+        console.log(secretName);
+        
+
+    </script>
+    
+</body>
+</html>

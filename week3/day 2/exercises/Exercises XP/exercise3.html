@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 3 : Repeat the question</title>
+</head>
+<body>
+    <h1>🌟 Exercise 3 : Repeat the question</h1>
+    <script>
+
+        // Prompt the user for a number.
+        // Hint : Check the data type you receive from the prompt (ie. Use the typeof method)
+        let user_input = prompt("enter a number")
+        console.log(typeof(user_input));
+
+        let number = Number(user_input);
+        console.log(typeof number);
+
+        // While the number is smaller than 10 continue asking the user for a new number.
+        // Tip : Which while loop is more relevant for this situation?
+        while (number < 10) {
+            user_input = prompt("number is too small enter a new number pls:");
+            number = Number(user_input);
+        }
+
+    </script>
+    
+</body>
+</html>

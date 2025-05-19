@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 2 : Your favorite colors</title>
+</head>
+<body>
+    <h1>🌟 Exercise 2 : Your favorite colors</h1>
+    <script>
+
+        // Create an array called colors where the value is a list of your five favorite colors.
+        let colors = ['black' , 'white' , 'blue' , 'red' , 'pink']
+
+        // Loop through the array and as you loop console.log a string like so: “My #1 choice is blue”, “My #2 choice is red” ect… .
+        for (let i = 0 ; i < colors.length ; i++){
+            console.log(`My #${i + 1} choice is ${colors[i]}`);
+        }
+
+        // Bonus: Change it to console.log “My 1st choice”, “My 2nd choice”, “My 3rd choice”, picking the correct suffix for each number.
+        // Hint : create an array of suffixes to do the Bonus
+        let suffixes = ['st', 'nd', 'rd', 'th', 'th'];
+
+        for (let i = 0; i < colors.length; i++) {
+            let num = i + 1;
+            let suffix = 'th';
+
+            if (num === 1) {
+                suffix = 'st';
+            } else if (num === 2) {
+                suffix = 'nd';
+            } else if (num === 3) {
+                suffix = 'rd';
+            }
+            console.log("My " + num + suffix + " choice is " + colors[i]);
+        }
+
+    </script>
+    
+</body>
+</html>

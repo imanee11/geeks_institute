@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 4 : Building Management</title>
+</head>
+<body>
+    <h1>🌟 Exercise 4 : Building Management</h1>
+
+    <script>
+        // Copy and paste the above object to your Javascript file.
+        const building = {
+            numberOfFloors: 4,
+            numberOfAptByFloor: {
+                firstFloor: 3,
+                secondFloor: 4,
+                thirdFloor: 9,
+                fourthFloor: 2,
+            },
+            nameOfTenants: ["Sarah", "Dan", "David"],
+            numberOfRoomsAndRent:  {
+                sarah: [3, 990],
+                dan:  [4, 1000],
+                david: [1, 500],
+            },
+        }
+
+        // Console.log the number of floors in the building.
+        console.log(building.numberOfFloors);
+        
+        // Console.log how many apartments are on the floors 1 and 3.
+        console.log("1st Floor:",building.numberOfAptByFloor.firstFloor);
+        console.log("3rd Floor:",building.numberOfAptByFloor.thirdFloor);
+
+        // Console.log the name of the second tenant and the number of rooms he has in his apartment.
+        let name = building.nameOfTenants[1]
+        let rooms = building.numberOfRoomsAndRent.dan[0]
+        console.log(`${name} has ${rooms} rooms`);
+        
+        // Check if the sum of Sarah’s and David’s rent is bigger than Dan’s rent. If it is, than increase Dan’s rent to 1200.
+        let sarahRent = building.numberOfRoomsAndRent.sarah[1]
+        let davidRent = building.numberOfRoomsAndRent.david[1]
+        let danRent = building.numberOfRoomsAndRent.dan[1]
+        let sum = sarahRent + davidRent
+        // console.log(sum);
+
+        if (sum > danRent) {
+            building.numberOfRoomsAndRent.dan[1] = 1200
+        }
+        console.log("dan's new rent:", building.numberOfRoomsAndRent.dan[1]);
+    </script>
+    
+</body>
+</html>
