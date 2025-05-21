@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 4 : Vacations Costs</title>
+</head>
+
+<body>
+    <h1>🌟 Exercise 4 : Vacations Costs</h1>
+    <script>
+        // Define a function called hotelCost().
+        // It should ask the user for the number of nights they would like to stay in the hotel.
+        // If the user doesn’t answer or if the answer is not a number, ask again.
+        // The hotel costs $140 per night. The function should return the total price of the hotel.
+
+        const hotelCost = () => {
+            let nights;
+
+            while (true) {
+                let input = prompt("enter the number of nights u would like to stay in the hotel:");
+                nights = Number(input);
+                console.log(nights);
+
+
+                if (!isNaN(nights) && nights > 0) {
+                    break;
+                }
+
+                alert("pls enter a valid number!");
+            }
+            const costs = 140;
+            const totalCost = nights * costs;
+            // alert(`total hotel cost: $${totalCost}`);
+            return totalCost
+        }
+
+        // hotelCost()
+
+        // Define a function called planeRideCost().
+        // It should ask the user for their destination.
+        // If the user doesn’t answer or if the answer is not a string, ask again.
+        // The function should return a different price depending on the location.
+        // “London”: 183$ // “Paris” : 220$ // All other destination : 300$
+
+        const planeRideCost = () => {
+            let destination;
+            let price;
+
+            while (true) {
+                let input = prompt("enter ur destination :");
+
+                if (typeof input === 'string' && input.trim() !== '') {
+                    destination = input.trim();
+                    break;
+                }
+
+                alert("Please enter a valid destination.");
+
+            }
+            if (destination.toLowerCase() == 'london') {
+                price = 183;
+            } else if (destination.toLowerCase() == 'paris') {
+                price = 220
+            } else {
+                price = 300
+            }
+            // alert(`ur destination cost: $${price}`)
+            return price
+
+        }
+        // planeRideCost()
+
+        // Define a function called rentalCarCost().
+        // It should ask the user for the number of days they would like to rent the car.
+        // If the user doesn’t answer or if the answer is not a number, ask again.
+        // Calculate the cost to rent the car. The car costs $40 everyday.
+        // If the user rents a car for more than 10 days, they get a 5% discount.
+        // The function should return the total price of the car rental.
+        const rentalCarCost = () => {
+            let days;
+            while (true) {
+                let input = prompt("enter the number of days u would like to rent the car:");
+                days = Number(input);
+
+                if (!isNaN(days) && days > 0) {
+                    break;
+                }
+
+                alert("pls enter a valid number!");
+            }
+            const costs = 40;
+            let totalCarCost = days * costs;
+            if (days >= 10) {
+                totalCarCost *= 0.95;
+            }
+            // alert(`total car rental cost: $${totalCost}`);
+            return totalCarCost
+        }
+        // rentalCarCost()
+
+        // Define a function called totalVacationCost() that returns the total cost of the user’s vacation by calling the 3 functions that you created above.
+        // Example : The car cost: $x, the hotel cost: $y, the plane tickets cost: $z.
+        const totalVacationCost = () => {
+            const totalCost = hotelCost();
+            const price = planeRideCost();
+            const totalCarCost = rentalCarCost();
+            alert(`The car cost: ${totalCarCost}, the hotel cost: ${totalCost}, the plane tickets cost: ${price}`)
+
+        }
+        totalVacationCost()
+
+
+
+    </script>
+
+</body>
+
+</html>

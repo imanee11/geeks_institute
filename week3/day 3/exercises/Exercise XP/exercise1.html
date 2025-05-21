@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 1 : Find the numbers divisible by 23</title>
+</head>
+<body>
+    <h1>🌟 Exercise 1 : Find the numbers divisible by 23</h1>
+    <script>
+        // Create a function call displayNumbersDivisible() that takes no parameter.
+        // In the function, loop through numbers 0 to 500
+        // Console.log all the numbers divisible by 23
+
+        function displayNumbersDivisible(){
+            let sum = 0
+            for (let i = 0; i <= 500; i++) {
+                if (i % 23 === 0) {
+                    console.log(i); 
+                    sum += i                    
+                }
+            } 
+            console.log(`SUM : ${sum}`);
+
+        }
+        displayNumbersDivisible()
+
+        // Bonus: Add a parameter divisor to the function.
+        function displayNumbersDivisible2(divisor){
+            let sum = 0
+            for (let i = 0; i <= 500; i++) {
+                if (i % divisor === 0) {
+                    console.log(i); 
+                    sum += i                    
+                }
+            } 
+            console.log(`SUM : ${sum}`);
+
+        }
+        displayNumbersDivisible2(100)
+
+    </script>
+    
+</body>
+</html>
