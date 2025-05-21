@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 6 : Calendar</title>
+</head>
+
+<body>
+    <h1>🌟 Exercise 6 : Calendar</h1>
+    <script>
+        const createCalendar = (year, month) => {
+            const table = document.createElement('table')
+
+            const days = ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'];
+
+            const header = document.createElement("tr")
+
+            for (let i = 0; i < days.length; i++) {
+                let th = document.createElement("th");
+                th.textContent = days[i];
+                header.appendChild(th);
+            }
+            table.appendChild(header);
+
+            // get date
+            let date = new Date (year , month - 1 , 1)
+            
+            let row = document.createElement('tr')
+
+
+
+        }
+        createCalendar()
+    </script>
+
+</body>
+
+</html>

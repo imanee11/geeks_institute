@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 3 : Is palindrome?</title>
+</head>
+<body>
+    <h1>🌟 Exercise 3 : Is palindrome?</h1>
+    <script>
+        
+        const isPalindrome = (str) => {
+            let letters = str.split('');
+            // console.log(letters);
+            let reversed = letters.reverse();
+            // console.log(reversed);
+            let joined = reversed.join('')
+            // console.log(joined);
+            return str === joined      
+        }
+        console.log(isPalindrome('imane'));
+        console.log(isPalindrome('kayak'));
+    
+    </script>
+    
+</body>
+</html>

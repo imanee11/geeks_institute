@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 4 : Biggest Number</title>
+</head>
+<body>
+    <h1>🌟 Exercise 4 : Biggest Number</h1>
+    <script>
+        const biggestNumberInArray = (arrayNumber) => {
+            let biggest = 0;
+
+            for (let i = 0; i < arrayNumber.length; i++) {
+                // console.log(arrayNumber[i]);
+                if (typeof arrayNumber[i] === 'number') {
+                    if (arrayNumber[i] > biggest) {
+                        biggest = arrayNumber[i]
+                    }
+                }  
+            }
+            return biggest
+        }
+        const array = [-1,0,3,100, 99, 2, 99]
+        console.log(biggestNumberInArray(array));
+        
+    </script>
+    
+</body>
+</html>

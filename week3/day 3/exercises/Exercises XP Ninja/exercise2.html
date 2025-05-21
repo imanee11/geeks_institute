@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 2: Capitalized letters</title>
+</head>
+
+<body>
+    <h1>🌟 Exercise 2: Capitalized letters</h1>
+    <script>
+        const capitalize = (str) => {
+            let even = '';
+            let odd = '';
+
+            for (let i = 0; i < str.length; i++) {
+                // console.log(str[i]);
+                if (i % 2 === 0) {
+                    even += str[i].toUpperCase()
+                    odd += str[i]
+                } else{
+                    even += str[i]
+                    odd += str[i].toUpperCase()
+                }
+                
+            }
+            return [even , odd]
+        }
+        console.log(capitalize('imane'));
+        
+    </script>
+
+</body>
+
+</html>
