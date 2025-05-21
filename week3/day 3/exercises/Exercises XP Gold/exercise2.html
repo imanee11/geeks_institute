@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 2 : Abbrev_name</title>
+</head>
+
+<body>
+    <h1>🌟 Exercise 2 : Abbrev_name</h1>
+    <script>
+        // Write a JavaScript function to convert a string into an abbreviated form.
+        const abbrevName = (name) => {
+            // split into 2 words
+            let names = name.split(" ");
+            // names[0] : first word / names[1][0] second word first letter
+            return names[0] + " " + names[1][0] + ".";
+        }
+
+        console.log(abbrevName("Robin Singh"));
+
+    </script>
+
+</body>
+
+</html>

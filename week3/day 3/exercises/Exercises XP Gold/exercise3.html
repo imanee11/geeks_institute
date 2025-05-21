@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 3 : SwapCase</title>
+</head>
+<body>
+    <h1>🌟 Exercise 3 : SwapCase</h1>
+    <script>
+
+        const swapCase = (str) => {
+            let result = '';
+            for (let i = 0; i < str.length; i++) {
+                let char = str[i];
+                // console.log(char);
+                if (char === char.toUpperCase()) {
+                    result+= char.toLowerCase()
+                }else {
+                    result+= char.toUpperCase()
+                }
+                                
+            }
+            return result
+        }
+        console.log(swapCase('The Quick Brown Fox'));
+        
+
+    </script>
+    
+</body>
+</html>
