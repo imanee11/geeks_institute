@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Challenge : Words in the stars</title>
+</head>
+
+<body>
+    <h1>Daily Challenge : Words in the stars</h1>
+    <script>
+        let input = prompt("enter words separated by commas:");
+        let words = input.split(',')
+        console.log(words);
+
+        let max = 0
+        for (let i = 0; i < words.length; i++) {
+            words[i] = words[i].trim()
+            // console.log(words[i]);
+            if (words[i].length > max) {
+                max = words[i].length
+            }
+        }
+        // console.log(max);
+
+        let border = '*'.repeat(max + 4) //top bottom border
+        console.log(border);
+
+        for (let i = 0; i < words.length; i++) {
+            let spaces = " ".repeat(max - words[i].length);
+            console.log("* " + words[i] + spaces + " *");
+        }
+        console.log(border)
+
+    </script>
+
+</body>
+
+</html>
