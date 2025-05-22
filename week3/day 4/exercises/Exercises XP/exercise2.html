@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 2 : Work with forms</title>
+</head>
+
+<body>
+    <h1>🌟 Exercise 2 : Work with forms</h1>
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="firstname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lastname"><br><br>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+    <ul class="usersAnswer"></ul>
+
+    <script>
+        // Retrieve the form and console.log it.
+        let form = document.querySelector('form');
+        console.log(form);
+
+        // Retrieve the inputs by their id and console.log them.
+        let firstNameInput = document.getElementById('fname');
+        let lastNameInput = document.getElementById('lname');
+
+        console.log(firstNameInput);
+        console.log(lastNameInput);
+
+        // Retrieve the inputs by their name attribute and console.log them.
+        const firstNameInput2 = document.getElementsByName('firstname')[0];
+        const lastNameInput2 = document.getElementsByName('lastname')[0];
+
+        console.log(firstNameInput2);
+        console.log(lastNameInput2);
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault()
+
+            const first = fname.value.trim();
+            const last = lname.value.trim();
+
+            if (first && last) {
+                let ul = document.querySelector('.usersAnswer')
+
+                let li1 = document.createElement('li')
+                li1.textContent = first
+                ul.appendChild(li1)
+
+                let li2 = document.createElement('li')
+                li2.textContent = last
+                ul.appendChild(li2)
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
