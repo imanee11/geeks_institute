@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 3 : Create a shopping list</title>
+</head>
+
+<body>
+    <h1>🌟 Exercise 3 : Create a shopping list</h1>
+    <div id="root"></div>
+
+    <script>
+        let shoppingList = []
+
+        let root = document.getElementById('root');
+        let form = document.createElement('form')
+
+        let input = document.createElement('input')
+        input.type = 'text'
+        input.placeholder = 'enter item';
+
+        let btn = document.createElement('button');
+        btn.type = 'submit'
+        btn.textContent = 'add item';
+
+        // add to the form
+        form.appendChild(input);
+        form.appendChild(btn);
+
+        // add form to root
+        root.appendChild(form)
+
+        // add item to the arr
+        function addItem(item) {
+            if (item.trim() !== '') {
+                shoppingList.push(item.trim());
+                console.log(shoppingList);
+            }
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();          
+            addItem(input.value);// pass input value to addItem
+            input.value = '';   
+        });
+
+        // add clear btn
+        let clearBtn = document.createElement('button');
+        clearBtn.type = 'button'
+        clearBtn.textContent = 'clear all'
+
+        root.appendChild(clearBtn)
+        clearBtn.addEventListener('click' , clearAll )
+
+        function clearAll(){
+            shoppingList = {}
+            console.log(shoppingList);
+            
+        }
+    </script>
+
+</body>
+
+</html>
