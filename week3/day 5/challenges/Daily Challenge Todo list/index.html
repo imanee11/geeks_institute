@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="main">
+
+        <div class="title">
+            <h1>MY NOTES</h1>
+            <ul>
+                <li><a href="#" class="link1">To<span>day</span></a></li>
+                <li><a href="#">This Week</a></li>
+                <li><a href="#">This Month</a></li>
+            </ul>
+        </div>
+
+        <div class="parent">
+            <div class="show-area1">
+                <div class="create-area">
+                    <button class="btn1" data-target="list1"><i class="fa-solid fa-plus"></i></button>
+                    <div id="list1" class="listTasks"></div>
+                </div>
+
+            </div>
+
+            <div class="show-area2">
+                <div class="create-area2">
+                    <button class="btn2" data-target="list2"><i class="fa-solid fa-plus"></i></button>
+                    <div id="list2" class="listTasks"></div>
+                </div>
+            </div>
+
+            <div class="show-area3">
+                <div class="create-area3">
+                    <button class="btn3" data-target="list3"><i class="fa-solid fa-plus"></i></button>
+                    <div id="list3" class="listTasks"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- modal input -->
+    <div id="modal" class="modal">
+        <div class="modal-box">
+            <button id="closeModal" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+            <h3>ADD TASK</h3>
+            <input type="text" id="taskInput" placeholder="Enter your task..." />
+            <button id="submitBtn" class="submit-btn">Add</button>
+        </div>
+    </div>
+
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

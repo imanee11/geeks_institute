@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: white;
+    padding-top: 15vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+h1 {
+    padding-bottom: 2vh;
+}
+
+ul {
+    display: flex;
+    gap: 3vw;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #D9D9D7;
+    font-size: 14px;
+}
+
+ul li a span {
+    border-bottom: 2px solid black;
+}
+
+.link1 {
+    color: black;
+}
+
+input {
+    /* width: 70%; */
+    padding: 2.5vh 1vw;
+    background: transparent;
+    border-radius: 20px;
+    color: black;
+    font-size: 15px;
+    outline: none;
+}
+
+input :focus {
+    border: none;
+}
+
+input::placeholder {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.226);
+}
+
+
+button {
+    padding: 1vh;
+    width: 10%;
+    background-color: transparent;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    /* border: 1.3px solid black; */
+    border: none;
+}
+
+.show-area1 {
+    width: 26vw;
+    /* height: 100%; */
+    background: #EFC;
+    border-radius: 30px;
+    overflow-y: auto;
+    height: 50vh;
+}
+
+.create-area {
+    text-align: end;
+    margin-right: 1vw;
+    margin-top: 2vh;
+
+}
+
+.create-area button {
+    background-color: transparent;
+    border: none;
+
+}
+
+.create-area button i {
+    font-size: 20px;
+}
+
+.show-area2 {
+    width: 26vw;
+    height: 50vh;
+    background: #DDB;
+    border-radius: 30px;
+    overflow-y: auto;
+
+}
+
+.create-area2 {
+    text-align: end;
+    margin-right: 1vw;
+    margin-top: 2vh;
+
+}
+
+.create-area2 button {
+    background-color: transparent;
+    border: none;
+
+}
+
+.create-area2 button i {
+    font-size: 20px;
+}
+
+.show-area3 {
+    width: 26vw;
+    height: 50vh;
+    background: #CAB;
+    border-radius: 30px;
+    overflow-y: auto;
+
+}
+
+.create-area3 {
+    text-align: end;
+    margin-right: 1vw;
+    margin-top: 2vh;
+
+}
+
+.create-area3 button {
+    background-color: transparent;
+    border: none;
+
+}
+
+.create-area3 button i {
+    font-size: 20px;
+}
+
+
+.parent {
+    display: flex;
+    /* justify-content: center; */
+    gap: 5vw;
+    margin-top: 5vh;
+
+}
+
+
+.area {
+    display: flex;
+    align-items: center;
+}
+
+
+.task-checkbox {
+    display: inline-block;
+}
+
+
+/* .big {
+    height: 50%;
+} */
+
+
+/* modal part */
+/* Modal Background */
+
+
+/* Modal Box */
+/* Modal background */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal box */
+.modal-box {
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    font-family: sans-serif;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Input field */
+#taskInput {
+    width: 90%;
+    padding: 8px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Submit button */
+.submit-btn {
+    background-color: #CAB;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+    /* Add some padding */
+    font-size: 12px;
+    /* Match your other text sizes */
+    font-weight: bold;
+    text-align: center;
+    width: auto;
+    /* Let it size by content */
+    transition: background-color 0.3s;
+}
+
+
+.submit-btn:hover {
+    background-color: #444;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+
+
+.listTasks {
+    width: 100%;
+    padding-left: 15px;
+    margin-top: 20px;
+}
+
+.task-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    gap: 10px;
+    /* margin-bottom: 10px; */
+    /* background: #f5f5f5; */
+    padding: 3px 10px;
+    border-radius: 8px;
+}
+
+.task-item .delete-btn {
+    background: transparent;
+    border: none;
+    color: #000;
+    font-size: 12px;
+    cursor: pointer;
+}
+.task-item .delete-btn i {
+    font-size: 13px;
+}
+
+.task-item div {
+    display: flex;
+    gap: 10px;
+}
+
+.task-item label {
+    font-size: 14px;
+}
+
