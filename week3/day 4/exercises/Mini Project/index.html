@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Auth Slide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .transition-transform {
+            transition: transform 0.6s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-[#e9e7d5]">
+
+    <div class="relative w-[800px] h-[500px] overflow-hidden bg-white rounded-lg shadow-2xl">
+
+        <div id="slider" class="flex w-[1600px] h-full transition-transform duration-700">
+
+            <!-- Sign In -->
+            <div class="w-[800px] flex">
+                <div class="w-1/2 text-white flex items-center justify-center text-2xl font-bold">
+                    <img src="https://cdn.dribbble.com/userupload/43332938/file/original-bdb1e2e53f68c9d56cb7fc7e3a4c2b36.png?resize=752x564&vertical=center" alt="" class="w-full h-full object-cover">
+                </div>
+                <div class="w-1/2 p-8 flex flex-col justify-center">
+                    <h2 class="text-2xl font-bold pb-8 text-[#334843]">Sign In</h2>
+                    <label for="" class="text-[13px] font-semibold text-[#334843] pb-2">Email address</label>
+                    <input type="email" placeholder="Enter your email" class="mb-4 p-2 border rounded placeholder:text-[12px]">
+                    <label for="" class="text-[13px] font-semibold text-[#334843] pb-2">Password</label>
+                    <input type="password" placeholder="Enter your password " class="mb-4 p-2 border rounded placeholder:text-[12px]">
+                    <button class="bg-[#334843] text-white px-4 py-2 rounded hover:bg-[#e9e7d5] hover:text-[#000] transition duration-300 font-semibold">Sign In</button>
+                    <p class="mt-4 text-sm">Don't have an account? <button id="toSignUp" class="text-[#efae52] underline">Sign Up</button></p>
+                </div>
+            </div>
+
+            <!-- Sign Up -->
+            <div class="w-[800px] flex">
+                <div class="w-1/2 p-8 flex flex-col justify-center">
+                    <h2 class="text-2xl font-bold mb-4 text-[#334843]">Sign Up</h2>
+                    <label for="" class="text-[13px] font-semibold text-[#334843] pb-2">Your name</label>
+                    <input type="text" placeholder="Enter your name " class="mb-4 p-2 border rounded placeholder:text-[12px]">
+                    <label for="" class="text-[13px] font-semibold text-[#334843] pb-2">Email address</label>
+                    <input type="email" placeholder="Enter your email" class="mb-4 p-2 border rounded placeholder:text-[12px]">
+                    <label for="" class="text-[13px] font-semibold text-[#334843] pb-2">Password</label>
+                    <input type="password" placeholder="Enter your password " class="mb-4 p-2 border rounded placeholder:text-[12px]"> 
+                    <button class="bg-[#334843] text-white px-4 py-2 rounded hover:bg-[#e9e7d5] hover:text-[#000] transition duration-300 font-semibold">Sign Up</button>
+                    <p class="mt-4 text-sm">Already have an account? <button id="toSignIn" class="text-[#efae52] underline">Sign In</button></p>
+                </div>
+                <!-- Image -->
+                <div class="w-1/2 bg-green-500 text-white flex items-center justify-center text-2xl font-bold">
+                    <img src="https://cdn.dribbble.com/userupload/43332938/file/original-bdb1e2e53f68c9d56cb7fc7e3a4c2b36.png?resize=752x564&vertical=center"
+                        alt="" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
