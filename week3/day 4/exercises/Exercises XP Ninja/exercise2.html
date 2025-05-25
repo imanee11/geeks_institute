@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 : Validate the email</title>
+</head>
+
+<body>
+    <h2>Email Check Without Regex</h2>
+    <form id="emailForm1">
+        <input type="text" id="email1" placeholder="Type your email">
+        <button type="submit">Check</button>
+        <p id="msg1"></p>
+    </form>
+
+    <h2>Email Check With Regex</h2>
+    <form id="emailForm2">
+        <input type="text" id="email2" placeholder="Type your email">
+        <button type="submit">Check</button>
+        <p id="msg2"></p>
+    </form>
+
+    <!-- script -->
+    <script>
+        //without regex
+        document.getElementById('emailForm1').onsubmit = function (e) {
+            e.preventDefault();
+            let email = document.getElementById('email1').value;
+            let msg = document.getElementById('msg1')
+
+            if (email.includes("@") && email.includes('.') && email.indexOf("@") > 0 && email.indexOf(".") > email.indexOf("@")) {
+                msg.style.color = 'green'
+                msg.textContent = 'looks greattt!!'
+            } else {
+                msg.style.color = 'red'
+                msg.textContent = 'write a valid email plsss'
+            }
+        }
+
+        //with regex
+        document.getElementById("emailForm2").onsubmit = function (e) {
+            e.preventDefault();
+            let email = document.getElementById("email2").value;
+            let msg = document.getElementById("msg2");
+
+            let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (pattern.test(email)) {
+                msg.style.color = "green";
+                msg.textContent = "looks greattt!!";
+            } else {
+                msg.style.color = "red";
+                msg.textContent = "write a valid email plsss";
+            }
+        };
+
+
+
+
+    </script>
+
+
+</body>
+
+
+</html>
