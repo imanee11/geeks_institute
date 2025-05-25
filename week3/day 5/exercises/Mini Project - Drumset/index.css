@@ -1,0 +1,59 @@
+body {
+  background-image: url("https://cdn.dribbble.com/userupload/32968509/file/original-7a62df5c5f256d2bc32ac8b4306fc3d6.png?resize=1504x1128&vertical=center");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
+  z-index: 0;
+}
+
+.drum-container {
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.drum {
+  width: 80px;
+  height: 80px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8); /* dark button */
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.2s;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.drum span {
+  font-size: 12px;
+  font-weight: normal;
+  display: block;
+  margin-top: 5px;
+  color: #ccc;
+}
+
+.drum:active,
+.drum.pressed {
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
+}
