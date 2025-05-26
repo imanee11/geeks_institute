@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 3: Drag & Drop</title>
+    <style>
+        #target {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            background: yellow;
+        }
+
+        #box {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🌟 Exercise 3: Drag & Drop</h1>
+    <div id="target"></div>
+    <br>
+    <div id="box"></div>
+
+    <script>
+        let box = document.getElementById('box')
+        let target = document.getElementById('target')
+
+        // make the box draggable
+        box.setAttribute('draggable', true);
+
+        // when dragging sstart
+        box.addEventListener('dragstart', function (e) {
+            e.dataTransfer.setData('text/plain', 'box');
+        })
+
+        // allow dropping on the targer
+        target.addEventListener('dragover' , function(e){
+            e.preventDefault();
+        })
+
+        // handle drop
+        target.addEventListener('drop' , function(e) {
+            e.preventDefault()
+            let data = e.dataTransfer.getData('text')
+            if (data === 'box') {
+                target.appendChild(box)
+                box.style.position = 'static'
+            }
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
