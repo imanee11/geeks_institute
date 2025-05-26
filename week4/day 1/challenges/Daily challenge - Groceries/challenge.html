@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily challenge: Groceries</title>
+</head>
+
+<body>
+    <script>
+        let client = "John";
+
+        const groceries = {
+            fruits: ["pear", "apple", "banana"],
+            vegetables: ["tomatoes", "cucumber", "salad"],
+            totalPrice: "20$",
+            other: {
+                paid: true,
+                meansOfPayment: ["cash", "creditCard"]
+            }
+        }
+
+        // Create an arrow function named displayGroceries, that console.logs the 3 fruits from the groceries object. Use the forEach method.
+        const displayGroceries = () => {
+            groceries.fruits.forEach(fruit => console.log(fruit));
+        };
+
+        // Create another arrow function named cloneGroceries
+        const cloneGroceries = () => {
+            let user = client
+            client = 'Betty'
+
+            console.log("user:", user);
+            console.log("client:", client);
+            //strings ar copied by value so user stays "John" even if client changes
+
+            let shopping = groceries
+            shopping.totalPrice = '35$'
+            shopping.paid = false
+
+            console.log("Updated shopping:", shopping);
+            console.log("Updated groceries:", groceries)
+            // shopping changes bc objects are copied by reference they share the same memory
+        }
+        displayGroceries()
+        cloneGroceries()
+
+    </script>
+
+</body>
+
+</html>
