@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1 : Nested functions</title>
+</head>
+
+<body>
+    <h1>Exercise 1 : Nested functions</h1>
+    <script>
+        const landscape = () => {
+
+            let result = "";
+
+            const flat = (x) => {
+                for (let count = 0; count < x; count++) {
+                    result = result + "_"; // Add '_' x times
+                }
+            }
+
+            const mountain = (x) => {
+                result = result + "/"
+                for (let counter = 0; counter < x; counter++) {
+                    result = result + "'"
+                }
+                result = result + "\\"
+            }
+
+            flat(4);        // "____"
+            mountain(4);    // "/''''\\"
+            flat(4);        // "____"
+
+
+            return result;
+        }
+
+        console.log(landscape()); // "____/''''\____"
+    </script>
+
+</body>
+
+</html>
