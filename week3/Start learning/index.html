@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const cleanRoom = (arr) => {
+            // separate num and str
+            let numbers = arr.filter(x => typeof x === 'number').sort((a, b) => a - b);
+            let strings = arr.filter(x => typeof x === "string").sort();
+
+            const groupSame = (items) => {
+                let result = [];
+                while (items.length > 0) {
+                    let same = items.filter(x => x === items[0])
+
+                    if (same.length > 1) {
+                        result.push(same);
+                    } else {
+                        result.push(items[0])
+                    }
+                    items = items.slice(same.length)
+                }
+                return result
+            }
+
+            let groupedNumbers = groupSame(numbers);
+            let groupedStrings = groupSame(strings);
+
+            if (groupedStrings.length === 0) return groupedNumbers;
+            if (groupedNumbers.length === 0) return groupedStrings;
+            return [groupedNumbers, groupedStrings];
+        }
+
+        console.log(cleanRoom([1, 2, 4, 591, 392, 391, 2, 5, 10, 2, 1, 1, 1, 20, 20]));
+
+        console.log(cleanRoom([1, "2", "3", 2]));
+
+        //Q2
+        function findTwoNumbers(arr, target) {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[i] + arr[j] === target) {
+                        return [arr[i], arr[j]];
+                    }
+                }
+            }
+            return null; // if no pair found
+        }
+        console.log(findTwoNumbers([1, 2, 3], 4));
+
+        //Q3
+        function convertColor(color) {
+            if (color[0] === "#") {
+                // HEX to RGB
+                let r = parseInt(color.slice(1, 3), 16);
+                let g = parseInt(color.slice(3, 5), 16);
+                let b = parseInt(color.slice(5, 7), 16);
+                return `rgb(${r}, ${g}, ${b})`;
+            } else {
+                // RGB to HEX
+                let parts = color.match(/\d+/g);
+                let r = Number(parts[0]).toString(16).padStart(2, "0");
+                let g = Number(parts[1]).toString(16).padStart(2, "0");
+                let b = Number(parts[2]).toString(16).padStart(2, "0");
+                return `#${r}${g}${b}`;
+            }
+        }
+
+
+        console.log(convertColor("#ff0000"));    
+        console.log(convertColor("rgb(0, 255, 0)"));
+
+
+
+
+    </script>
+
+</body>
+
+</html>
