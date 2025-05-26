@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1 : Merge Words</title>
+</head>
+
+<body>
+    <h1>Exercise 1 : Merge Words</h1>
+    <script>
+        const mergeWords = (word) => {
+            let result = word;
+
+            const next = (nextWord) => {
+                if (nextWord === undefined) {
+                    return result;
+                }
+                result += ' ' + nextWord;
+                return next;
+            }
+
+            return next;
+        }
+
+        console.log(mergeWords('There')('is')('no')('spoon.')());
+
+        const mergeWords = (string) => (nextString) =>
+            nextString === undefined ? string : mergeWords(string + ' ' + nextString);
+
+        console.log(mergeWords('There')('is')('no')('spoon.')());
+
+
+    </script>
+
+</body>
+
+</html>
