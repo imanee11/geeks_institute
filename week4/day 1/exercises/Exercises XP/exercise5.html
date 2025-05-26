@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 5 : Kg and grams</title>
+</head>
+
+<body>
+    <h1>🌟 Exercise 5 : Kg and grams</h1>
+    <script>
+        // First, use function declaration and invoke it.
+        function kgToGrams(weight) {
+            return weight * 1000;
+        }
+
+        console.log(kgToGrams(2));
+
+        // Then, use function expression and invoke it.
+        const kgToGrams2 = function (weight) {
+            return weight * 1000;
+        };
+
+        console.log(kgToGrams2(3))
+
+        // Write in a one line comment, the difference between function declaration and function expression.
+        //u can use function declarations before the code but not function expressions
+
+        // Finally, use a one line arrow function and invoke it.
+        const kgToGrams3 = weight => weight * 1000;
+
+        console.log(kgToGrams3(1.5));
+        
+    </script>
+
+</body>
+
+</html>

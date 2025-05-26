@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 1 : Scope</title>
+</head>
+
+<body>
+    <h1>🌟 Exercise 1 : Scope</h1>
+    <script>
+        // #1
+        function funcOne() {
+            let a = 5;
+            if (a > 1) {
+                a = 3;
+            }
+            alert(`inside the funcOne function ${a}`);
+        }
+
+        // #1.1 - run in the console:
+        funcOne() // a will be 3 bc it's first set to 5 and since 5 is more than 1 it gets changed to 3
+
+        // #1.2 What will happen if the variable is declared 
+        // with const instead of let ?
+        // it will give an error bc const variables can't be reassigned
+
+        //#2
+        let a = 0;
+        function funcTwo() {
+            a = 5;
+        }
+
+        function funcThree() {
+            alert(`inside the funcThree function ${a}`);
+        }
+
+        // #2.1 - run in the console:
+        // 
+        funcThree() // inside the funcThree function 0
+        funcTwo() // changes a to 5
+        funcThree() // inside the funcThree function 5
+
+        // #2.2 What will happen if the variable is declared 
+        // with const instead of let ?
+        // it will give an error bc const variables can't be changed
+
+        //#3
+        function funcFour() {
+            window.a = "hello";
+        }
+
+
+        function funcFive() {
+            alert(`inside the funcFive function ${a}`);
+        }
+
+        // #3.1 - run in the console:
+        funcFour() //this creates a global var a with the value hello
+        funcFive() // inside the funcFive function 5 bc a was already 5 so it uses that one
+
+        //#4
+        let a = 1;
+        function funcSix() {
+            let a = "test";
+            alert(`inside the funcSix function ${a}`);
+        }
+
+
+        // #4.1 - run in the console:
+        funcSix() // inside the funcSix function test
+
+        // #4.2 What will happen if the variable is declared 
+        // with const instead of let ?
+        // const is ok here bc a is not changing
+
+        //#5
+        let a = 2;
+        if (true) {
+            let a = 5;
+            alert(`in the if block ${a}`);
+        }
+        alert(`outside of the if block ${a}`);
+
+        // #5.1 - run the code in the console
+        // in the if block 5
+        // outside of the if block 2
+
+        // #5.2 What will happen if the variable is declared 
+        // with const instead of let ?
+        // const is fine here no error since a is not changing
+
+    </script>
+
+</body>
+
+</html>

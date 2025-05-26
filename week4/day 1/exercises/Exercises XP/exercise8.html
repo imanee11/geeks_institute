@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 8 : Juice Bar</title>
+</head>
+
+<body>
+    <h1>🌟 Exercise 8 : Juice Bar</h1>
+    <script>
+
+        function makeJuice(size) {
+            let ingredients = []
+            function addIngredients(ing1 , ing2 , ing3) {
+                ingredients.push(ing1 , ing2 , ing3)
+            }
+
+            function displayJuice() {
+                let message = `The client wants a ${size} juice, containing ${ingredients.join(', ')}.`
+                document.body.innerHTML += `<p>${message}</p>` 
+            }
+
+            addIngredients('apple' , 'kiwi' , 'orange')
+            addIngredients("banana", "pineapple", "mango")
+            displayJuice()
+        }
+
+        makeJuice("medium")
+
+
+    </script>
+
+</body>
+
+</html>
