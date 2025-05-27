@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4 : Nested arrays</title>
+</head>
+
+<body>
+    <h1>Exercise 4 : Nested arrays</h1>
+    <script>
+
+        const array = [[1], [2], [3], [[[4]]], [[[5]]]]
+        const result = array.flat(2);
+        console.log(result);
+
+        const greeting = [["Hello", "young", "grasshopper!"], ["you", "are"], ["learning", "fast!"]];
+        const result2 = greeting.map(sentence => sentence.join(" "));
+        console.log(result2);
+
+        let result3 = greeting.flat().join(' ')
+        console.log(result3);
+
+        const trapped = [[[[[[[[[[[[[[[[[[[[[[[[[[3]]]]]]]]]]]]]]]]]]]]]]]]]]
+        const result4 = trapped.flat(Infinity);
+        console.log(result4);
+        
+
+        
+    </script>
+
+</body>
+
+</html>

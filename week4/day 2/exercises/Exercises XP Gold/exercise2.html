@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2: Analyzing the reduce method</title>
+</head>
+
+<body>
+    <h1>Exercise 2: Analyzing the reduce method</h1>
+    <script>
+        [[0, 1], [2, 3]].reduce(
+            (acc, cur) => {
+                return acc.concat(cur);
+            },
+            [1, 2],
+        );
+        // [1, 2, 0, 1, 2, 3]
+    </script>
+
+</body>
+
+</html>
