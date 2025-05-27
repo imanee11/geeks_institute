@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1 : Dog age to Human years</title>
+</head>
+
+<body>
+    <h1>Exercise 1 : Dog age to Human years</h1>
+    <script>
+        const data = [
+            {
+                name: 'Butters',
+                age: 3,
+                type: 'dog'
+            },
+            {
+                name: 'Cuty',
+                age: 5,
+                type: 'rabbit'
+            },
+            {
+                name: 'Lizzy',
+                age: 6,
+                type: 'dog'
+            },
+            {
+                name: 'Red',
+                age: 1,
+                type: 'cat'
+            },
+            {
+                name: 'Joey',
+                age: 3,
+                type: 'dog'
+            },
+            {
+                name: 'Rex',
+                age: 10,
+                type: 'dog'
+            },
+        ];
+
+        let totalHumanYears = 0;
+
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].type === 'dog') {
+                totalHumanYears += data[i].age * 7;
+            }
+        }
+
+        console.log(totalHumanYears);
+
+        const totalHumanYear = data
+            .filter(animal => animal.type === 'dog')
+            .reduce((sum, dog) => sum + dog.age * 7, 0);
+
+        console.log(totalHumanYear);
+    </script>
+
+</body>
+
+</html>

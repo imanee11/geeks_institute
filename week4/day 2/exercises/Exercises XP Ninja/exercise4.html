@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4 : Array to Object</title>
+</head>
+<body>
+    <h1>Exercise 4 : Array to Object</h1>
+    <script>
+        const letters = ['x', 'y', 'z', 'z']
+
+        let result = {}
+
+        for (let i = 0; i < letters.length; i++) {
+            const letter = letters[i];
+            // console.log(letter);
+            result[letter] = (result[letter] || 0) + 1
+        }
+
+        console.log(result);
+
+
+        let result2 = letters.reduce((acc , letter) => {
+            acc[letter] = (acc[letter] || 0) + 1
+            return acc ;
+        } , {})   
+        
+        console.log(result2);
+            
+    </script>
+    
+</body>
+</html>

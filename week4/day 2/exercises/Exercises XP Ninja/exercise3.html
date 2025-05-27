@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3 : Employees #3</title>
+</head>
+
+<body>
+    <h1>Exercise 3 : Employees #3</h1>
+    <script>
+        const users = [{ firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' },
+        { firstName: 'Chloe', lastName: 'Alnaji', role: 'Full Stack Resident' },
+        { firstName: 'Jonathan', lastName: 'Baughn', role: 'Enterprise Instructor' },
+        { firstName: 'Michael', lastName: 'Herman', role: 'Lead Instructor' },
+        { firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
+        { firstName: 'Wes', lastName: 'Reid', role: 'Instructor' },
+        { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor' }];
+
+        let userObj = {}
+
+        users.forEach(user => {
+            let fullName = `${user.firstName} ${user.lastName}`;
+            userObj[fullName] = user.role
+        });
+
+        console.log(userObj);
+        
+    </script>
+
+</body>
+
+</html>
