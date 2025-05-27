@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1 : Menu</title>
+</head>
+
+<body>
+    <h1>Exercise 1 : Menu</h1>
+    <script>
+        const menu = [
+            {
+                type: "starter",
+                name: "Houmous with Pita"
+            },
+            {
+                type: "starter",
+                name: "Vegetable Soup with Houmous peas"
+            },
+            {
+                type: "dessert",
+                name: "Chocolate Cake"
+            }
+        ]
+
+        let hasDessert = menu.some(item => item.type === "dessert")
+            ? "yes there's at least one dessert"
+            : "no desserts found";
+
+        console.log(hasDessert);
+
+        // Using an array method, check if all the elements in the array are starters.
+        const allStarters = menu.every(item => item.type === "starter")
+            ? "all items are starters"
+            : "not all items are starters";
+
+        console.log(allStarters);
+
+
+        const hasMainCourse = menu.some(item => item.type === "main course");
+
+        if (!hasMainCourse) {
+            menu.push({ type: "main course", name: "Grilled Tofu with Rice" });
+        }
+
+        console.log(menu);
+
+        const vegetarian = ["vegetable", "houmous", "eggs", "vanilla", "potatoes"];
+
+        menu.forEach(item => {
+            const lowercaseName = item.name.toLowerCase();
+            item.vegetarian = vegetarian.some(vegItem =>
+                lowercaseName.includes(vegItem)
+            );
+        });
+
+        console.log("menu with vegetarian flag:", menu);
+
+
+
+    </script>
+</body>
+
+</html>

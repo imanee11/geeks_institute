@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3 : You said string ?</title>
+</head>
+
+<body>
+    <h1>Exercise 3 : You said string ?</h1>
+    <script>
+        const search_word = (str, word) => {
+            let words = str.split(' ');
+            let count = 0;
+
+            for (let w of words) {
+                if (w === word) {
+                    count++;
+                }
+            }
+
+            return `'${word}' was found ${count} times.`;
+        }
+
+        console.log(search_word('The quick brown fox', 'fox'));
+        
+    </script>
+
+</body>
+
+</html>
