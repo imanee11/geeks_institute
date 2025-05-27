@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5 : Turtle & Rabbit</title>
+</head>
+
+<body>
+    <h1>Exercise 5 : Turtle & Rabbit</h1>
+    <script>
+        const startLine = '     ||<- Start line';
+        let turtle = '🐢';
+        let rabbit = '🐇';
+
+        turtle = turtle.padStart(startLine.indexOf('<') + 1);
+        rabbit = rabbit.padStart(startLine.indexOf('<') + 1);
+
+        console.log(startLine);
+        console.log(turtle);
+        console.log(rabbit);
+
+        turtle = turtle.trim().padEnd(9, '=');
+        console.log(turtle);
+        
+
+    </script>
+
+</body>
+
+</html>
