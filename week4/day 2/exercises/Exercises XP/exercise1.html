@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 1 : Colors</title>
+</head>
+
+<body>
+    <h1>🌟 Exercise 1 : Colors</h1>
+    <script>
+        const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
+
+        // Write a JavaScript program that displays the colors in the following order : “1# choice is Blue.” “2# choice is Green.” “3# choice is Red.” ect…
+        colors.forEach((value, index) => {
+            console.log(`#${index + 1} choice is ${value}`) // logs each element of the array
+        });  
+
+        // Check if at least one element of the array is equal to the value “Violet”. If yes, console.log("Yeah"), else console.log("No...")
+        let check = colors.some((value)=> { return (value == 'Violet') });
+        console.log(check);        
+
+    </script>
+
+</body>
+
+</html>
