@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 6 : Challenges</title>
+</head>
+
+<body>
+    <h1>🌟 Exercise 6 : Challenges</h1>
+    <script>
+        // Evaluate these(ie True or False)
+        // [2] === [2]  false
+        // { } === {}  false
+
+        const object1 = { number: 5 };
+        const object2 = object1;
+        const object3 = object2;
+        const object4 = { number: 5 };
+
+        object1.number = 4;
+        console.log(object2.number) //4
+        console.log(object3.number) //4
+        console.log(object4.number) //5
+
+        // Create a class Animal with the attributes name, type and color. The type is the animal type, for example: dog, cat, dolphin etc …
+        class Animal {
+            constructor(name, type, color) {
+                this.name = name
+                this.type = type
+                this.color = color
+            }
+        }
+
+
+        // Create a class Mammal that extends from the Animal class. Inside the class, add a method called sound(). 
+        // This method takes a parameter: the sound the animal makes, and returns the details of the animal (name, type and color) as well as the sound it makes.
+        class Mammal extends Animal {
+            constructor(name, type, color) {
+                super(name, type, color)
+            }
+
+            sound(noise) {
+                return `${noise} I'm a ${this.type}, named ${this.name} and I'm ${this.color}`;
+            }
+        }
+
+        const farmerCow = new Mammal("Lily", "cow", "brown and white");
+        console.log(farmerCow.sound("Moooo"));
+
+    </script>
+
+</body>
+
+</html>
