@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily challenge : Creating Objects</title>
+</head>
+
+<body>
+    <script>
+        class Video {
+            constructor(title, uploader, time) {
+                this.title = title
+                this.uploader = uploader
+                this.time = time
+            }
+
+            // Create a method called watch() which displays a string as follows:
+            // “uploader parameter watched all time parameter of title parameter!”
+
+            watch() {
+                console.log(`${this.uploader} watched all ${this.time} seconds of ${this.title}!`);
+            }
+        }
+
+        const video1 = new Video('JavaScript Tutorial', 'imane', 2400)
+        video1.watch();
+
+        const video2 = new Video('CSS', 'yassmine', 5400)
+        video2.watch();
+
+        const videoData = [
+            { title: "JavaScript Basics", uploader: "Alice", time: 200 },
+            { title: "HTML Tutorial", uploader: "Bob", time: 150 },
+            { title: "CSS Tricks", uploader: "Carol", time: 180 },
+            { title: "React for Beginners", uploader: "Dave", time: 240 },
+            { title: "Node.js Crash Course", uploader: "Eve", time: 300 },
+        ];
+
+        let videoInstances = [];
+
+        for (let data of videoData) {
+            const video = new Video(data.title, data.uploader, data.time);
+            videoInstances.push(video);
+            video.watch();
+        }
+
+    </script>
+
+</body>
+
+</html>
