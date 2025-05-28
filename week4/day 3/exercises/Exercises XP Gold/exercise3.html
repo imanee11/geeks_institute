@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3 : Counter class</title>
+</head>
+
+<body>
+    <h1>Exercise 3 : Counter class</h1>
+    <script>
+        class Counter {
+            constructor() {
+                this.count = 0;
+            }
+
+            increment() {
+                this.count++;
+            }
+        }
+
+        const counterOne = new Counter();
+        counterOne.increment(); //1
+        counterOne.increment(); //2
+
+        const counterTwo = counterOne;
+        counterTwo.increment(); //3
+
+        console.log(counterOne.count); //3
+
+    </script>
+
+</body>
+
+</html>
