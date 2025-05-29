@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('https://cdn.dribbble.com/userupload/43437396/file/original-2b66bc6fd247bf155258bb205c8d7e16.png?resize=1504x1128&vertical=center');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body class="relative flex items-center justify-center min-h-screen">
+
+    <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+    <div class="flex flex-col gap-5">
+
+        <div class="relative z-10 text-center bg-white bg-opacity-80 p-8 rounded-xl shadow-lg w-[37vw]">
+            <form id="filterForm" class="mb-4 flex gap-2 items-center">
+                <input type="text" id="filterAuthor" placeholder="Filter by author" class="border px-2 py-1 rounded text-sm w-full" />
+                <button type="submit" class="bg-[#faf2ea] font-semibold text-black text-[10px] px-3 py-1 rounded ">Filter</button>
+            </form>
+
+            <section id="quoteDisplay" class="text-lg italic text-gray-700 min-h-[80px]"></section>
+
+            <div class="flex items-end justify-between  ">
+                <div id="navButtons" class="flex gap-2 ">
+                    <button id="prevBtn" class="bg-[#faf2ea] text-black text-[10px] px-3 py-1 rounded font-semibold">Previous</button>
+                    <button id="nextBtn" class="bg-[#faf2ea] text-black text-[10px] px-3 py-1 rounded font-semibold">Next</button>
+                </div>
+                <div>
+                    <button id="generateBtn" class="bg-[#faf2ea] text-[12px] hover:bg-[#faf2ea] text-black font-semibold py-2 px-4 rounded transition duration-300">Generate Quote</button>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 my-2">
+                <button id="countWithSpaces"
+                    class="text-[10px] bg-[#f5aa75] hover:bg-[#faf2ea] text-white hover:text-black py-[5px] px-2 rounded transition duration-300">Characters
+                    (with spaces)</button>
+                <button id="countWithoutSpaces"
+                    class="text-[10px] bg-[#f5aa75]  hover:bg-[#faf2ea] text-white hover:text-black py-[5px] px-2 rounded transition duration-300">Characters
+                    (without spaces)</button>
+                <button id="countWords"
+                    class="text-[10px] bg-[#f5aa75] hover:bg-[#faf2ea] text-white hover:text-black py-[5px] px-2 rounded transition duration-300">Word
+                    count</button>
+                <button id="likeBtn"
+                    class="text-[10px] bg-[#f5aa75]  hover:bg-[#faf2ea] text-white hover:text-black py-[5px] px-2 rounded transition duration-300">Like
+                    (<span id="likeCount">0</span>)</button>
+            </div>
+
+        </div>
+
+        <div class="relative z-10 text-center bg-white bg-opacity-80 p-8 rounded-xl shadow-lg w-[37vw]">
+            <form id="quoteForm" class="mt-6 space-y-4">
+                <input id="newQuote" type="text" placeholder="Enter quote" class="w-full p-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#af9c8c] placeholder:text-sm" required>
+                <input id="newAuthor" type="text" placeholder="Enter author" class="w-full p-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#af9c8c] placeholder:text-sm" required>
+                <button type="submit" class="bg-[#faf2ea] text-[14px] text-black font-semibold py-2 px-4 rounded transition duration-300 w-full">Add Quote</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>
