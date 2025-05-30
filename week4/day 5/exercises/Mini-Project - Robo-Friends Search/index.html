@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('https://cdn.dribbble.com/userupload/17692138/file/original-7fb5db61c41062d491f1276c061ea251.jpg?resize=2048x2895&vertical=center');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .pixel-font {
+            /* font-family: 'Pixelify Sans', sans-serif; */
+            font-family: 'SEGA LOGO FONT', sans-serif;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/sega-logo-font" rel="stylesheet">
+
+</head>
+
+<body class="relative min-h-screen flex items-start justify-center ">
+    <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+    <nav class="z-50 bg-[#20292a] text-[#fff] fixed px-[5vw] py-4 shadow w-full flex items-center justify-between">
+        <div>
+            <p class="uppercase text-2xl text-[#fff]/90 pixel-font">RoboFriends</p>
+        </div>
+        <div>
+            <input type="text" id="search" class="w-[30vw] p-2 rounded placeholder:text-[12px] text-black text-[14px]"
+                placeholder="Search Robots...">
+        </div>
+    </nav>
+    <div id="cardContainer" class="py-[15vh] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+
+</html>
