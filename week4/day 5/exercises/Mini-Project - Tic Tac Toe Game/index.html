@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        nerko: ['"Nerko One"', "cursive"],
+                    },
+                    colors: {
+                        lavender: "#e5e6fa",
+                        purpleMain: "#803edc",
+                        purpleLight: "#803edc79",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        * {
+            font-family: "Nerko One", cursive;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="w-screen h-screen flex items-center justify-center bg-white">
+    <div class="w-[90vw] md:w-[40vw] h-[85vh] border-2 border-lavender rounded-lg flex flex-col relative">
+        <!-- Top Bar -->
+        <div class="bg-lavender text-purpleMain text-2xl font-bold text-center py-5">
+            Tic Tac Toe
+        </div>
+
+        <!-- Symbol Selection -->
+        <div class="flex justify-center gap-4 pt-4">
+            <button onclick="selectSymbol('X')"
+                class="bg-purpleMain text-white px-4 py-1 rounded-full hover:bg-purpleLight transition">
+                Play as X
+            </button>
+            <button onclick="selectSymbol('O')"
+                class="bg-purpleMain text-white px-4 py-1 rounded-full hover:bg-purpleLight transition">
+                Play as O
+            </button>
+        </div>
+
+        <!-- Bottom Game Area -->
+        <div class="flex flex-col items-center justify-center text-center px-4">
+            <!-- <h2 class="text-purpleMain text-sm py-1">Click in any BOX to play!!</h2> -->
+            <div id="gameMessage" class="text-purpleMain text-sm py-2"></div>
+
+            <!-- Board -->
+            <div id="board" class="space-y-2">
+                <!-- Row 1 -->
+                <div class="flex justify-center space-x-2">
+                    <div class="box w-[100px] h-[100px] bg-purpleMain text-white flex items-center justify-center text-4xl cursor-pointer hover:bg-purpleLight transition"
+                        id="box1" data-index="0"></div>
+                    <div class="box w-[100px] h-[100px] bg-purpleMain text-white flex items-center justify-center text-4xl cursor-pointer hover:bg-purpleLight transition"
+                        id="box2" data-index="1"></div>
+                    <div class="box w-[100px] h-[100px] bg-purpleMain text-white flex items-center justify-center text-4xl cursor-pointer hover:bg-purpleLight transition"
+                        id="box3" data-index="2"></div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="flex justify-center space-x-2">
+                    <div class="box w-[100px] h-[100px] bg-purpleMain text-white flex items-center justify-center text-4xl cursor-pointer hover:bg-purpleLight transition"
+                        id="box4" data-index="3"></div>
+                    <div class="box w-[100px] h-[100px] bg-purpleMain text-white flex items-center justify-center text-4xl cursor-pointer hover:bg-purpleLight transition"
+                        id="box5" data-index="4"></div>
+                    <div class="box w-[100px] h-[100px] bg-purpleMain text-white flex items-center justify-center text-4xl cursor-pointer hover:bg-purpleLight transition"
+                        id="box6" data-index="5"></div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="flex justify-center space-x-2">
+                    <div class="box w-[100px] h-[100px] bg-purpleMain text-white flex items-center justify-center text-4xl cursor-pointer hover:bg-purpleLight transition"
+                        id="box7" data-index="6"></div>
+                    <div class="box w-[100px] h-[100px] bg-purpleMain text-white flex items-center justify-center text-4xl cursor-pointer hover:bg-purpleLight transition"
+                        id="box8" data-index="7"></div>
+                    <div class="box w-[100px] h-[100px] bg-purpleMain text-white flex items-center justify-center text-4xl cursor-pointer hover:bg-purpleLight transition"
+                        id="box9" data-index="8"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Restart Button -->
+        <div class="absolute -bottom-4 left-1/2 -translate-x-1/2">
+            <button onclick="restartBtn()"
+                class="w-8 h-8 rounded-full bg-purpleMain flex items-center justify-center text-white">
+                <i class="fa-solid fa-arrows-rotate"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
