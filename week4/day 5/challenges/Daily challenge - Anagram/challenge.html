@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily challenge: Anagram</title>
+</head>
+
+<body>
+    <script>
+        const areAnagrams = (str1, str2) => {
+            // relove spaces
+            str1 = str1.replace(/\s/g, '').toLowerCase();
+            str2 = str2.replace(/\s/g, '').toLowerCase()
+
+            // turn them into array + sort them + join them again
+            let sortedStr1 = str1.split('').sort().join('');
+            let sortedStr2 = str2.split('').sort().join('');
+
+            return sortedStr1 === sortedStr2;
+        }
+        console.log(areAnagrams("Astronomer", "Moon starer"));
+        console.log(areAnagrams("School master", "The classroom"));
+
+
+    </script>
+
+</body>
+
+</html>
