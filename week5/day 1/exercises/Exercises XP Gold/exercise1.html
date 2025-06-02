@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1 : Promise.all()</title>
+</head>
+
+<body>
+    <h1>Exercise 1 : Promise.all()</h1>
+    <script>
+        const promise1 = Promise.resolve(3);
+        const promise2 = 42;
+        const promise3 = new Promise((resolve, reject) => {
+            setTimeout(resolve, 3000, 'foo');
+        });
+
+        Promise.all([promise1, promise2, promise3])
+            .then(values => {
+                console.log(values);
+            })
+            .catch(error => {
+                console.error('One of the promises failed:', error);
+            });
+
+            // it waits for all to finish
+            // if all succeed it returns their values in order
+            // if one fails it catches the error
+
+    </script>
+
+</body>
+
+</html>
