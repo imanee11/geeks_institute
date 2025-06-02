@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Exercise 3 : Resolve & Reject</title>
+</head>
+<body>
+    <h1>🌟 Exercise 3 : Resolve & Reject</h1>
+    <script>
+        const resolvedPromise = Promise.resolve(3)
+        resolvedPromise.then(value => console.log(value));
+
+        const rejectedPromise = Promise.reject('Boo!')
+        rejectedPromise.catch(error => console.log(error))
+    </script>
+    
+</body>
+</html>
