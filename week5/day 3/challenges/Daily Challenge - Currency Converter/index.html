@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://cdn.dribbble.com/userupload/40090470/file/original-5e296cfeb74f5e9aab480babc2113609.jpg?resize=1504x1128&vertical=center');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: "Roboto", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-black/50 backdrop-blur-[5px]">
+    <div class="bg-[#fff]/95 p-8 rounded-2xl shadow-2xl w-full max-w-md text-center space-y-4">
+        <h1 class="text-2xl font-bold text-[#065342]">Currency Converter</h1>
+
+        <div class="flex justify-between gap-4">
+            <select id="from" class="w-1/2 p-2 border rounded text-[14px]">
+                <option>Loading...</option>
+            </select>
+
+            <select id="to" class="w-1/2 p-2 border rounded text-[14px]">
+                <option>Loading...</option>
+            </select>
+        </div>
+
+        <input id="amount" type="number" placeholder="Amount" class="w-full p-2 border rounded text-[14px]" />
+        <div class="flex flex-col gap-2 ">
+            <button id="convert" class="bg-[#e19e15] text-white text-[14px] font-semibold px-[6vw] py-2 m-auto rounded hover:bg-[#e19e15]/80 transition">Convert</button>
+            <button id="switch" class="text-[12px] text-[#065342] underline">Switch Currencies</button>
+        </div>
+
+
+        <p id="result" class="text-lg font-semibold mt-2 text-green-700"></p>
+    </div>
+    <script defer src="index.js"></script>
+</body>
+
+</html>
