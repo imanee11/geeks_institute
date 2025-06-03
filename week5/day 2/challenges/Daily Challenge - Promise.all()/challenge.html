@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Challenge : Promise.all()</title>
+</head>
+
+<body>
+    <form action="" id="sunriseForm">
+        <h3>City 1 (Paris)</h3>
+        <input type="text" value="48.864716" id="lat1" placeholder="Latitude " required><br><br>
+        <input type="text"  value="2.349014"  id="lng1" placeholder="Longitude " required>
+
+        <h3>City 2 (New York)</h3>
+        <input type="text" value="40.730610" id="lat2" placeholder="Latitude " required> <br><br>
+        <input type="text" value="-73.935242" id="lng2" placeholder="Longitude " required> <br><br>
+
+        <button type="submit">Get Sunrise Times</button>
+
+    </form>
+
+    <div id="result"></div>
+    <script>
+        const form = document.getElementById("sunriseForm");
+        const result = document.getElementById("result");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const lat1 = document.getElementById("lat1").value;
+            const lng1 = document.getElementById("lng1").value;
+            const lat2 = document.getElementById("lat2").value;
+            const lng2 = document.getElementById("lng2").value;
+
+            const url1 = `https://api.sunrise-sunset.org/json?lat=${lat1}&lng=${lng1}&formatted=0`;
+            const url2 = `https://api.sunrise-sunset.org/json?lat=${lat2}&lng=${lng2}&formatted=0`;
+
+            Promise.all([fetch(url1), fetch(url2)])
+                .then((responses) => Promise.all(responses.map(res => res.json())))
+                .then((data) => {
+                    const sunrise1 = new Date(data[0].results.sunrise).toLocaleTimeString();
+                    const sunrise2 = new Date(data[1].results.sunrise).toLocaleTimeString();
+
+                    result.innerHTML = `
+                        <p>Paris Sunrise: ${sunrise1}</p>
+                        <p>New York Sunrise: ${sunrise2}</p>
+                    `;
+                })
+                .catch(() => {
+                    result.innerHTML = "<p>Error fetching sunrise times</p>";
+                });
+        });
+
+    </script>
+
+
+</body>
+
+</html>
