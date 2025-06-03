@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1 : Giphy API #3</title>
+</head>
+<body>
+    <h1>Exercise 1 : Giphy API #3</h1>
+    <form action="" id="gifForm">
+        <input type="text" id="searchInput" placeholder="Enter a category..." required >
+        <button type="submit">Find</button>
+    </form>
+    <br>
+    <button id="deleteAllBtn">Delete</button>
+    <div id="gifContainer"></div>
+
+    <script>
+        let form = document.getElementById('gifForm')
+        let input = document.getElementById('searchInput')
+        let container = document.getElementById('gifContainer')
+        let deleteAllBtn = document.getElementById("deleteAllBtn");
+
+
+        form.addEventListener('submit' , async (e) => {
+            e.preventDefault()
+            const searchTerm = input.ariaValueMax
+
+            const API_KEY = "hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My";
+            const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${searchTerm}`;
+
+            try {
+                const res = await fetch (url)
+                if (!res.ok) {
+                    throw new Error("Failed to fetch GIF");
+                }
+
+                const data = await res.json()
+                const gifUrl = data.data.images.original.url;
+
+                const img = document.createElement('img')
+                img.src = gifUrl
+                img.style.width = "300px";
+                img.style.margin = "10px";
+
+                container.appendChild(img)
+            } catch (error) {
+                container.innerHTML = 'couldnt fetch GIF'
+                console.error(error)
+            }
+        })
+
+        deleteAllBtn.addEventListener('click' , () => {
+            container.innerHTML = ''
+        })
+
+    </script>
+    
+</body>
+</html>
