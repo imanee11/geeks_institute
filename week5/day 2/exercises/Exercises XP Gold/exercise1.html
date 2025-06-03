@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1 : Giphy API #2</title>
+</head>
+
+<body>
+    <h1>Exercise 1 : Giphy API #2</h1>
+    <div id="container"></div>
+    <script>
+        async function fetchRandomGif() {
+            const apiKey = 'hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My';
+            const url = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=&rating=g`;
+
+            try {
+                const res = await fetch(url)
+                if (!res.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`)
+                }
+
+                const data = await res.json()
+
+                const gifUrl = data.data.images.original.url
+
+                let div = document.getElementById('container')
+
+                const img = document.createElement('img');
+                img.src = gifUrl
+
+                div.appendChild(img)
+            } catch (error) {
+                console.error('Error fetching the GIF:', error.message);
+            }
+        }
+
+        fetchRandomGif()
+
+    </script>
+
+</body>
+
+</html>

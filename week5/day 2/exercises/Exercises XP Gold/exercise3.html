@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3 : Analyze #3</title>
+</head>
+
+<body>
+    <h1>Exercise 3 : Analyze #3</h1>
+    <script>
+        let resolveAfter2Seconds = function () {
+            console.log("starting slow promise");
+            return new Promise(resolve => {
+                setTimeout(function () {
+                    resolve("slow");
+                    console.log("slow promise is done");
+                }, 2000);
+            });
+        };
+
+        let resolveAfter1Second = function () {
+            console.log("starting fast promise");
+            return new Promise(resolve => {
+                setTimeout(function () {
+                    resolve("fast");
+                    console.log("fast promise is done");
+                }, 1000);
+            });
+        };
+
+        let concurrentStart = async function () {
+            console.log('==CONCURRENT START with await==');
+            const slow = resolveAfter2Seconds();
+            const fast = resolveAfter1Second();
+            console.log(await slow);
+            console.log(await fast);
+        }
+
+        setTimeout(concurrentStart, 4000)
+
+        // after 4 s
+        // ==CONCURRENT START with await==
+        // starting slow promise
+        // starting fast promise
+
+        // fast promise is done        <-- after 1 s
+        // slow promise is done        <-- after 2 s
+        
+        // slow
+        // fast
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4 : Modify fetch with Async/Await</title>
+</head>
+
+<body>
+    <h1>Exercise 4 : Modify fetch with Async/Await</h1>
+    <script>
+        const urls = [
+            "https://jsonplaceholder.typicode.com/users",
+            "https://jsonplaceholder.typicode.com/posts",
+            "https://jsonplaceholder.typicode.com/albums"
+            // to get an error : "https://jsonplaceholder.typicode.typicode/albums"
+        ];
+
+        const getData = async function () {
+            try {
+                const responses = await Promise.all(
+                    urls.map(async (url) => {
+                        const res = await fetch(url)
+                        if (!res.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return await res.json()
+                    })
+                );
+                const [users, posts, albums] = responses
+                console.log('users', users);
+                console.log('posts', posts);
+                console.log('albums', albums);
+            }catch (error) {
+                console.log('ooooooops', error.message);
+            }
+        }
+        getData()
+
+
+
+    </script>
+
+</body>
+
+</html>
