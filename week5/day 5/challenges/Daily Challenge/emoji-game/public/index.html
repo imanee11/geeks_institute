@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Emoji Game</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Emoji Guessing Game</h1>
+    <h2 id="emoji" style="font-size: 4rem;"></h2>
+
+    <div id="options"></div>
+
+    <p id="feedback"></p>
+    <p>Score: <span id="score">0</span></p>
+
+    <input type="text" id="username" placeholder="ur name (optional)" />
+    <h3>Leaderboard</h3>
+    <div id="leaderboard"></div>
+
+    <script>
+        let emojiEl = document.getElementById("emoji");
+        let optionsEl = document.getElementById("options");
+        let feedbackEl = document.getElementById("feedback");
+        let scoreEl = document.getElementById("score");
+        let usernameInput = document.getElementById("username");
+        let leaderboardEl = document.getElementById("leaderboard");
+
+        function loadQuestion() {
+            fetch("/question")
+                .then(res => res.json())
+                .then(data => {
+                    emojiEl.textContent = data.emoji;
+                    scoreEl.textContent = data.score;
+                    optionsEl.innerHTML = "";
+
+                    data.options.forEach(option => {
+                        const btn = document.createElement("button");
+                        btn.textContent = option;
+                        btn.onclick = () => makeGuess(option);
+                        optionsEl.appendChild(btn);
+                    });
+                });
+        }
+
+        function makeGuess(answer) {
+            fetch("/guess", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    answer: answer,
+                    username: usernameInput.value
+                })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    feedbackEl.textContent = data.feedback;
+                    scoreEl.textContent = data.score;
+                    showLeaderboard(data.leaderboard);
+                    loadQuestion();
+                });
+        }
+
+        function showLeaderboard(list) {
+            leaderboardEl.innerHTML = "";
+            list.forEach(entry => {
+                leaderboardEl.innerHTML += `<p>${entry.username}: ${entry.score}</p>`;
+            });
+        }
+
+        loadQuestion();
+    </script>
+</body>
+
+</html>
