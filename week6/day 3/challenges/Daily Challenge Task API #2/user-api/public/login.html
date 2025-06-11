@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        button {
+            /* display: block; */
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="">Username :</label>
+        <input type="text" id="username" placeholder="Username" required><br>
+        <label for="">Password :</label>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit" id="submitBtn" disabled>Login</button>
+    </form>
+    <p id="msg"></p>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const btn = document.getElementById('submitBtn');
+        const msg = document.getElementById('msg');
+
+        form.addEventListener('input', () => {
+            btn.disabled = !form.username.value || !form.password.value;
+        })
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault()
+            const data = {
+                username: form.username.value,
+                password: form.password.value
+            }
+
+            const res = await fetch('/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await res.json();
+            msg.textContent = result.message;
+        })
+    </script>
+
+</body>
+
+</html>

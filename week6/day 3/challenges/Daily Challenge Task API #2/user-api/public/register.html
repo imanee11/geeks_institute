@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        button {
+            /* display: block; */
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Register</h1>
+    <form id="registerForm">
+        <label for="">First name :</label>
+        <input type="text" id="name" placeholder="Name" required><br>
+        <label for="">Last name :</label>
+        <input type="text" id="lastName" placeholder="Last Name" required><br>
+        <label for="">Email :</label>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <label for="">Username :</label>
+        <input type="text" id="username" placeholder="Username" required><br>
+        <label for="">Password :</label>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit" id="submitBtn" disabled>Register</button>
+    </form>
+    <p id="msg"></p>
+
+
+    <script>
+        let form = document.getElementById('registerForm');
+        let btn = document.getElementById('submitBtn');
+        let msg = document.getElementById('msg');
+
+        form.addEventListener('input', () => {
+            btn.disabled = ![...form.querySelectorAll("input")].every(i => i.value.trim());
+        })
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                name: form.name.value,
+                lastName: form.lastName.value,
+                email: form.email.value,
+                username: form.username.value,
+                password: form.password.value
+            }
+
+            const res = await fetch('/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+
+            const result = await res.json()
+            msg.textContent = result.message
+        })
+
+    </script>
+
+</body>
+
+</html>
