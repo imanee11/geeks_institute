@@ -1,0 +1,140 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8fafc;
+    color: #1f2937;
+    height: 100vh;
+}
+
+/* Login Page */
+.login-container {
+    max-width: 400px;
+    margin: 120px auto;
+    padding: 2rem;
+    background: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Chat Page */
+.chat-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Users List */
+.users {
+    width: 25%;
+    background-color: #f1f5f9;
+    border-right: 1px solid #e5e7eb;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.users h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+#userList {
+    list-style: none;
+}
+
+#userList li {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: #e2e8f0;
+    border-radius: 5px;
+}
+
+/* Chat Box */
+.chat-box {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+#messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+#messages div {
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    word-wrap: break-word;
+}
+
+/* Input and Send Button */
+.chat-box input {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    margin: 1rem;
+    flex: 1;
+    font-size: 1rem;
+}
+
+.chat-box button {
+    margin: 1rem 1rem 1rem 0;
+    padding: 0.75rem 1.2rem;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.chat-box button:hover {
+    background-color: #059669;
+}
+
+.chat-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid #e5e7eb;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <body>
+        <div class="chat-container">
+            <div class="users">
+                <h3>Active Users</h3>
+                <ul id="userList"></ul>
+            </div>
+            <div class="chat-box">
+                <div id="messages"></div>
+                <input id="msgInput" placeholder="Type a message..." />
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io();
+            const username = localStorage.getItem("username");
+
+            socket.emit("joinRoom", username);
+
+            socket.on("message", (msg) => {
+                const div = document.createElement("div");
+                div.textContent = msg;
+                document.getElementById("messages").appendChild(div);
+            });
+
+            socket.on("userList", (users) => {
+                const list = document.getElementById("userList");
+                list.innerHTML = "";
+                users.forEach((user) => {
+                    const li = document.createElement("li");
+                    li.textContent = user;
+                    list.appendChild(li);
+                });
+            });
+
+            function sendMessage() {
+                const msg = document.getElementById("msgInput").value;
+                if (msg) {
+                    socket.emit("chatMessage", msg);
+                    document.getElementById("msgInput").value = "";
+                }
+            }
+        </script>
+    </body>
+
+</body>
+
+</html>
