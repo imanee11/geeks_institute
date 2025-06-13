@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strategy Game</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1>Multiplayer Strategy Game</h1>
+    <div id="grid"></div>
+    <div>
+        <label>Switch Player:</label>
+        <button onclick="setPlayer('Alice')">Alice</button>
+        <button onclick="setPlayer('Bob')">Bob</button>
+        <p>Current Player: <span id="currentPlayer">None</span></p>
+
+        <button onclick="move('up')">Up</button>
+        <button onclick="move('down')">Down</button>
+        <button onclick="move('left')">Left</button>
+        <button onclick="move('right')">Right</button>
+    </div>
+    <p id="message"></p>
+    <script src="script.js"></script>
+</body>
+
+</html>

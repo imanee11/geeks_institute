@@ -1,0 +1,30 @@
+#grid {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    gap: 2px;
+    margin: 20px 0;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 40px;
+    font-size: 12px;
+}
+
+.base {
+    background-color: #3498db;
+    color: white;
+}
+
+.obstacle {
+    background-color: #555;
+}
+
+.player {
+    background-color: #2ecc71;
+    color: white;
+}
