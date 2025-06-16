@@ -1,11 +1,12 @@
 import React from 'react';
+import DemoCarousel from './components/DemoCarousel';
 
-const App = () => {
+function App() {
   return (
-    <div>
-      
+    <div className="App">
+      <DemoCarousel />
     </div>
   );
-};
+}
 
 export default App;
