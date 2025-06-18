@@ -1,0 +1,73 @@
+.clock-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+    font-family: 'Arial', sans-serif;
+}
+
+.year {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.month {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.compass {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compass-item {
+    position: absolute;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.top {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: bottom center;
+}
+
+.right {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+}
+
+.bottom {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: top center;
+}
+
+.left {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: right center;
+}
+
+.center {
+    text-align: center;
+    font-size: 1.1rem;
+}
