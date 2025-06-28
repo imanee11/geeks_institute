@@ -19,7 +19,7 @@ const ShoppingCart = () => {
 
     return (
         <div className="max-w-4xl mx-auto p-6">
-            <h1 className="text-2xl font-bold mb-4">🛒 Shopping Cart</h1>
+            <h1 className="text-2xl font-bold mb-4">Shopping Cart</h1>
 
             <h2 className="text-lg font-semibold mb-2">Products</h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
